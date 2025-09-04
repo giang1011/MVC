@@ -1,0 +1,7 @@
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.AssemblyInfoInputs.cache
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.AssemblyInfo.cs
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.RazorAssemblyInfo.cache
+C:\Users\student\Desktop\VietNam\obj\Debug\net8.0\VietNam.RazorAssemblyInfo.cs

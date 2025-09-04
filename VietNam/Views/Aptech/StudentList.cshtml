@@ -1,0 +1,13 @@
+﻿@model List<VietNam.Models.Student>
+
+<h2>Danh sách sinh viên</h2>
+<ul>
+    @foreach (var student in Model)
+    {
+        <li>
+            <a href="/aptech/student/@student.Id">
+                @student.Name (@student.Age tuổi)
+            </a>
+        </li>
+    }
+</ul>

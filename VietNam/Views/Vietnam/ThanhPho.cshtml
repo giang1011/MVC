@@ -1,0 +1,13 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "Danh sách thành phố Việt Nam";
+}
+
+<h2>Danh sách thành phố Việt Nam</h2>
+<ul>
+    @foreach (var city in Model)
+    {
+        <li>@city</li>
+    }
+</ul>
