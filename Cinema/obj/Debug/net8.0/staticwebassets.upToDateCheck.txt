@@ -1,0 +1,4 @@
+wwwroot\Images\batman.jpg
+wwwroot\Images\Hay.jpg
+wwwroot\Images\images.jpg
+wwwroot\Images\NoMay.jpg

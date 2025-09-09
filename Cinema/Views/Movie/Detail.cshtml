@@ -1,0 +1,46 @@
+﻿@model Cinema.Models.Movie
+@{
+    ViewData["Title"] = "Chi tiết phim";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-5 text-center">
+                <img src="@Model.ImageUrl" class="movie-img img-fluid rounded-start" alt="@Model.Title" />
+            </div>
+
+            <div class="col-md-7">
+                <div class="card-body">
+                    <h3 class="card-title text-primary fw-bold">@Model.Title</h3>
+                    <p class="card-text text-muted">@Model.Description</p>
+                    <p><strong>Đạo diễn:</strong> @Model.Director</p>
+                    <p><strong>Giá vé:</strong> @Model.Price VNĐ</p>
+
+                    <div class="mt-3">
+                        <a href="@Model.TrailerUrl" target="_blank" class="btn btn-danger me-2">🎞 Trailer</a>
+                        <a href="@Model.WatchUrl" target="_blank" class="btn btn-success">▶ Xem Phim</a>
+                    </div>
+
+                    <div class="mt-4">
+                        <a asp-controller="Movie" asp-action="Index" class="btn btn-outline-secondary">
+                            ⬅ Quay về danh sách
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .img-fluid {
+        width: 50%;
+        max-width: 350px;
+        height: 525px; 
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+
+</style>

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "uy3NzBjLP1o=",
+  "success": true,
+  "projectFilePath": "C:\\DoanhNguyen\\Cinema\\Cinema.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\student\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}

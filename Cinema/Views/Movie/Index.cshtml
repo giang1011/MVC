@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Cinema.Models.Movie>
+@{
+    ViewData["Title"] = "Danh sách phim";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center text-primary fw-bold"> Danh Sách Phim Hot</h2>
+    <div class="row g-4">
+        @foreach (var movie in Model)
+        {
+            <div class="col-md-4 col-sm-6">
+                <div class="card h-100 shadow-lg border-0 rounded-3 movie-card">
+                    <img src="@movie.ImageUrl" class="card-img-top rounded-top" alt="@movie.Title" />
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-dark fw-bold">@movie.Title</h5>
+                        <p class="card-text text-muted">@movie.Description</p>
+                        <p class="mb-1"><span class="fw-bold text-success">Giá:</span> @movie.Price VNĐ</p>
+                        <p class="mb-3"><span class="fw-bold text-info">Đạo diễn:</span> @movie.Director</p>
+
+                        <a asp-controller="Movie" asp-action="Detail" asp-route-id="@movie.Id"
+                           class="btn btn-outline-primary mt-auto">
+                            Xem Chi Tiết ➝
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .movie-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .movie-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+    .card-img-top {
+        width: 15%;
+        height: 400px; 
+        height: 400px; 
+        object-fit: cover; 
+        border-radius: 8px 8px 0 0;
+</style>
