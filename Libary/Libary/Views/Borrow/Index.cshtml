@@ -1,0 +1,24 @@
+﻿@model List<Libary.Models.Borrow>
+@{
+    ViewData["Title"] = "Borrow List";
+}
+<h2> Borrowed Books</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Borrower</th>
+            <th>Book</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Borrower</td>
+                <td>@b.Book?.Title</td>
+                <td>@b.BorrowDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>

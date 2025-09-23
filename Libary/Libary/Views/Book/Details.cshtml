@@ -1,0 +1,20 @@
+﻿@model Libary.Models.Book
+@{
+    ViewData["Title"] = "Book Details";
+}
+<h2>Book Details</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">Title</dt>
+    <dd class="col-sm-10">@Model.Title</dd>
+    <dt class="col-sm-2">Author</dt>
+    <dd class="col-sm-10">@Model.Author</dd>
+    <dt class="col-sm-2">Year</dt>
+    <dd class="col-sm-10">@Model.Year</dd>
+    <dt class="col-sm-2">Quantity</dt>
+    <dd class="col-sm-10">@Model.Quantity</dd>
+    <dt class="col-sm-2">Category</dt>
+    <dd class="col-sm-10">@Libary.Data.LibraryData.Categories.FirstOrDefault(c => c.Id == Model.CategoryId)?.Name</dd>
+</dl>
+
+<a asp-action="Index" class="btn btn-secondary">Back to List</a>

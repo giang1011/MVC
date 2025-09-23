@@ -1,0 +1,26 @@
+﻿@model Libary.Models.Borrow
+@{
+    ViewData["Title"] = "Borrow Book";
+    var book = ViewBag.Book as Libary.Models.Book;
+}
+<h2>Borrow Book</h2>
+
+<div class="mb-3">
+    <strong>Book:</strong> @book.Title <br />
+    <strong>Available Quantity:</strong> @book.Quantity
+</div>
+
+<form asp-action="Borrow" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="BookId" />
+    <div class="mb-3">
+        <label class="form-label">Borrower Name</label>
+        <input asp-for="BorrowerName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Borrow Date</label>
+        <input asp-for="BorrowDate" type="date" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-success">Borrow</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

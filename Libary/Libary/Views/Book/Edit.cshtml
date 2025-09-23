@@ -1,0 +1,33 @@
+﻿@model Libary.Models.Book
+@{
+    ViewData["Title"] = "Edit Book";
+}
+<h2>Edit Book</h2>
+
+<form asp-action="Edit" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input asp-for="Author" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input asp-for="Year" type="number" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Quantity</label>
+        <input asp-for="Quantity" type="number" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select asp-for="CategoryId" class="form-select"
+                asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))"></select>
+    </div>
+    <button type="submit" class="btn btn-warning">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

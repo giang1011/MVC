@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Libary.Models.Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<h2>Books</h2>
+
+<form method="get" asp-action="Index" class="mb-3">
+    <input type="text" name="search" value="@ViewBag.Search" class="form-control d-inline w-25" placeholder="Search by title or author..." />
+    <button type="submit" class="btn btn-primary">Search</button>
+    <a asp-action="Create" class="btn btn-success">Add Book</a>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Title</td>
+                <td>@b.Author</td>
+                <td>@b.Year</td>
+                <td>@b.Quantity</td>
+                <td>@Libary.Data.LibraryData.Categories.FirstOrDefault(c => c.Id == b.CategoryId)?.Name</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@b.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@b.Id" class="btn btn-danger btn-sm">Delete</a>
+                    <a asp-action="Borrow" asp-route-id="@b.Id" class="btn btn-success btn-sm">Borrow</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-page="@i" asp-route-search="@ViewBag.Search">@i</a>
+            </li>
+        }
+    </ul>
+</nav>
